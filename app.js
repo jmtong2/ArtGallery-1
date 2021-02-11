@@ -4,30 +4,37 @@ const bodyParser = require("body-parser")
 const app = express()
 const port = 3000
 const mongoose = require('mongoose')
+const User = require('./models/user')
 
 //MongoDB Connection
-// const MongoClient = require('mongodb').MongoClient;
-// const uri = "mongodb+srv://appdevpog:sash123@nodetuts.ilwsd.mongodb.net/nodetuts?retryWrites=true&w=majority";
-// const client = new MongoClient(uri, { useNewUrlParser: true });
-// client.connect(err => {
-//   const collection = client.db("test").collection("devices");
-//   // perform actions on the collection object
-//   client.close();
-// });
-
-const dbURI = "mongodb+srv://rayray:pokerchamp@nodetuts.ilwsd.mongodb.net/note-tuts?retryWrites=true&w=majority";
+const dbURI = "mongodb+srv://rayray33:pokerchamp@nodetuts.ilwsd.mongodb.net/note-tuts?retryWrites=true&w=majority";
 mongoose.connect(dbURI, { useNewUrlParser: true, useUnifiedTopology: true})
-        .then((result) => console.log("connected to db"))
+        .then((result) => app.listen(port, function(){
+                                console.log("Listening at port " + port)
+                          }))
         .catch((err) => console.log(err))
 
 //register view engine
 app.set('view engine', 'ejs')
 
-app.use(bodyParser.urlencoded({extended: true}))        //Parse form
-app.use(bodyParser.json())                              //Parse json
 app.use(express.static(path.join(__dirname, "./")))  //static folder
 
-app.listen(port)
+app.get('/users', (req, res) => {
+        const user = new User({
+                email: 'raymund@gmail',
+                password: 'poker',
+                name: 'pogi',
+                mobile: '12345'
+        })
+
+        user.save()
+                .then((result) => {
+                        res.send(result)
+                })
+                .catch((err) => {
+                        console.log(err)
+                })
+})
 
 //http://localhost:3000/
 app.get("/", function(req, res){
