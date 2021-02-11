@@ -250,7 +250,86 @@
 				text-decoration: none;
 			}
 
+			/* view details*/
+			.singledetails{
+				margin-top: 25px;
+				text-align: left;
+			}
+
+			.singledetails img{
+				padding: 0;
+				height: 50%;
+				width: 50%;
+				float: right;
+			}
+
+			.singledetails .col2 h2{
+				font-family: sans-serif;
+				font-size: 35px;
+			}
+
+			.singledetails .col2 p{
+				margin-top: 5px;
+				font-family: sans-serif;
+				font-size: 15px;
+			}
+
+			.singledetails h4{
+				margin: 20px 0;
+				font-size: 22px;
+				font-weight: bold;
+			}
+
 	/* Buttons */
+
+		button{
+			width: 150px;
+			height: 50px;
+			cursor: pointer;
+			margin: 5px;
+			background: none;
+			border: none;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			box-sizing: border-box;
+		}
+
+		.cart{
+			background: #272727;
+			color: #fff;
+			border-radius: 10px;
+			font-size: 15px;
+			font-weight: bolder;
+			border-right: 2px solid black;
+			flex-direction: column;
+		}
+
+		.cart i{
+			position: absolute;
+			margin-left: 500px;
+			column-fill: transparent;
+			transition: 400ms;
+			color: transparent;
+		}
+
+		.cart span{
+				transition: 400ms;
+		}
+
+		.cart:hover span{
+			margin-right: 30px;
+		}
+
+		.cart:hover i{
+			margin-left: 80px;
+			column-fill: #272727;
+			color: #fff;
+		}
+
+		button:focus{
+			outline: none;
+		}
 
 		.button
 		{
@@ -278,11 +357,6 @@
 				color: #FFF !important;
 			}
 
-/*********************************************************************************/
-/* Icons                                                                         */
-/* Powered by Font Awesome by Dave Gandy | http://fontawesome.io                 */
-/* Licensed under the SIL OFL 1.1 (font), MIT (CSS)                              */
-/*********************************************************************************/
 
 	.fa
 	{

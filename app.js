@@ -17,7 +17,7 @@ mongoose.connect(dbURI, { useNewUrlParser: true, useUnifiedTopology: true})
 //register view engine
 app.set('view engine', 'ejs')
 
-app.use(express.static(path.join(__dirname, "./")))  //static folder
+app.use(express.static(path.join(__dirname, './')))  //static folder
 
 app.get('/users', (req, res) => {
         const user = new User({
@@ -44,6 +44,11 @@ app.get("/", function(req, res){
 //http://localhost:3000/about
 app.get("/about", function(req, res){
         res.render('about')
+})
+
+//http://localhost:3000/details
+app.get("/details", function(req, res){
+        res.render('details')
 })
 
 //404 error page
