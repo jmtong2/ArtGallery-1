@@ -93,6 +93,19 @@
 			padding: 0 0 0.5em 0;
 		}
 
+	.signup-btn{
+		right: 80px;
+		position: absolute;
+		text-decoration: none;
+		column: #fff;
+		color: #272727;
+		border: 2px solid transparent;
+		border-radius: 20px;
+		background-image: linear-gradient(#FFF, #fff),radial-gradient(circle at top left,#fd00da,#19d7f8);
+		background-origin: border-box;
+		background-clip: content-box, border-box;
+	}
+
 	br.clear
 	{
 		clear: both;
@@ -742,60 +755,38 @@
 		}
 
 /*********************************************************************************/
-/* Nav                                                                           */
+/* Nav    #272727                                                                */
 /*********************************************************************************/
 
-	#nav
-	{
+	#nav{
+		height: 100%;
+		width: 100%;
 		background: #272727;
+		border-top-left-radius: 5px;
+		border-top-right-radius: 5px;
 	}
 
-		#nav-wrapper
-		{
-		}
+	#nav ul{
+		display: inline-flex;
+		margin: 50px;
+	}
 
-		#nav > ul
-		{
-			margin: 0;
-			padding: 0;
-			text-align: center;
-		}
+	#nav img{
+		width: 90px;
+		margin-top: -30px;
+		margin-left: -750px;
+		margin-bottom: -35px;
+		align-items: center;
+		font-style: oblique 90deg;
+	}
 
-		#nav > ul > li
-		{
-			display: inline-block;
-			border-right: 1px solid;
-			border-color: rgba(255,255,255,.1);
-		}
+	#nav ul li{
+		list-style: none;
+		margin: 0 20px;
+		color: #fff;
+		cursor: pointer;
 
-			#nav > ul > li:last-child
-			{
-				padding-right: 0;
-				border-right: none;
-			}
-
-			#nav > ul > li > a,
-			#nav > ul > li > span
-			{
-				display: inline-block;
-				padding: 1em 1.5em;
-				letter-spacing: 0.06em;
-				text-decoration: none;
-				text-transform: uppercase;
-				font-size: 1.1em;
-				outline: 0;
-				color: #FFF;
-			}
-
-			#nav li.active a
-			{
-				color: #FFF;
-			}
-
-			#nav > ul > li > ul
-			{
-				display: none;
-			}
+	}
 
 /*********************************************************************************/
 /* Banner                                                                        */

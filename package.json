@@ -22,5 +22,6 @@
     "url": "https://github.com/EternalSunshineoftheSpotlessMind/ArtGallery/issues"
   },
   "homepage": "https://github.com/EternalSunshineoftheSpotlessMind/ArtGallery#readme",
-  "description": ""
+  "description": "Machine Project requirement for CCAPDEV",
+  "devDependencies": {}
 }
