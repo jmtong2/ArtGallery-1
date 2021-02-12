@@ -19,7 +19,7 @@
     .login_container{
       height: 100%;
       width: 100%;
-      background-image: url("images/bg.png");
+      background-image: url("../images/bg.png");
       background-position: center;
       background-size: cover;
       position: absolute;
@@ -37,7 +37,7 @@
       width: 220px;
       margin: 35px auto;
       position: relative;
-      box-shadow: 0 0 20px 9px #ff61241f;
+      box-shadow: 0 0 20px 9px #272727;
       border-radius: 30px;
     }
 
@@ -56,7 +56,7 @@
       position: absolute;
       height: 100%;
       width: 110px;
-      background: linear-gradient(to right, #ff105f, #ffad06);
+      background: white;
       border-radius: 30px;
       transition: .5s;
     }
@@ -84,10 +84,11 @@
     .submit-btn{
       width: 85%;
       padding: 10px 30px;
+      color: white;
       cursor: pointer;
       display: block;
       margin: auto;
-      background: linear-gradient(to right, #ff105f, #ffad06);
+      background: #272727;
       margin-top: 68px;
       border: 0;
       outline: none;
@@ -115,18 +116,18 @@
         <button type="button" class="toggle-btn" onclick="register()">Register</button>
       </div>
 
-      <form id="login" class="input-group">
-          <input type="text" class="input-field" placeholder="username" required>
-          <input type="text" class="input-field" placeholder="password" required>
+      <form id="login" class="input-group" action="/login" method="POST">
+          <input type="text" class="input-field" placeholder="username" name="name" required>
+          <input type="password" class="input-field" placeholder="password" name="password" required>
           <button type="submit" class="submit-btn">Log In</button>
       </form>
 
-      <form id="register" class="input-group">
-          <input type="text" class="input-field" placeholder="username" required>
-          <input type="email" class="input-field" placeholder="email" required>
-          <input type="text" class="input-field" placeholder="password" required>
-          <button type="submit" class="submit-btn">Register</button>
-      </form>
+      <form id="register" class="input-group" action="/login" method="POST">
+        <input type="text" class="input-field" placeholder="username" name="name" required>
+        <input type="email" class="input-field" placeholder="email" name="email" required>
+        <input type="password" class="input-field" placeholder="password" name="password" required>
+        <button type="submit" class="submit-btn">Register</button>
+    </form>
 
     </div>
   </div>
