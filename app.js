@@ -5,6 +5,7 @@ const app = express()
 const port = process.env.PORT || 3000
 const mongoose = require('mongoose')
 const User = require('./models/user')
+const Artwork = require('./models/artwork.js');
 
 const AuthRoute = require('./routes/auth')
 
@@ -46,10 +47,19 @@ app.get("/", function(req, res){
         res.render('index')
 })
 
+
 //http://localhost:3000/gallery
-app.get("/gallery", function(req, res){
-        res.render('gallery')
-})
+app.get("/gallery", function(req, res, next){
+  Artwork.find({},' ',function(err, docs) {
+    var artworkChunks = [];
+    var chunkSize = 2;
+    for (var i = 0; i < docs.length; i += chunkSize){
+      artworkChunks.push(docs.slice(i, i + chunkSize));
+    }
+    console.log(docs);
+    res.render('gallery', { main: 'Purchase', docs: docs });
+  });
+});
 
 //http://localhost:3000/details
 app.get("/details", function(req, res){
